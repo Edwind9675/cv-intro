@@ -66,9 +66,10 @@ def detect_lanes(lines):
 #if 2 lanes are opposite direction, that mean they are opposite
 
 def image_line_detect(img):
+    """detect lines in the area"""
     image = img.copy()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # convert to grayscale
-    edges = cv2.Canny(gray, 30, 43, apertureSize=3) # detect edges
+    edges = cv2.Canny(gray, 90, 100, apertureSize=3) # detect edges
     lines = cv2.HoughLinesP(
                 edges,
                 1,
