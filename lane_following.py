@@ -11,7 +11,7 @@ def get_lane_center(lanes):
     slope1 = (y1-y2)/(x1-x2)
     x1, y1, x2, y2 = lanes[1]
     slope2 = (y1-y2)/(x1-x2)
-    center_slope = (slope1+slope2)/2
+    center_slope = 1/((1/slope1+1/slope2)/2)
     return center_intercept, center_slope
 
 def draw_center_lane(img, center_intercept, center_slope, xPoint = 0, yPoint = 0):
